@@ -1,0 +1,37 @@
+<html>
+<head>
+	<title>Hello Widget</title>
+</head>
+<body>
+	<script
+	data-dojo-config="async: true"
+	src="dojo/dojo/dojo.js">
+</script>
+<script>
+	function modules_loaded(domReady,declare,_WidgetBase)
+	{
+		var HelloWidget = declare(_WidgetBase,{
+			message: "default message",
+			postCreate: function(){
+				this.inherited(arguments)
+				this.domNode.innerHTML = this.message;
+			}
+		});
+
+		var widget = new HelloWidget({
+			message: "widget says hello!"
+		});
+
+		widget.startup();
+
+
+		function dom_is_ready()
+		{
+			widget.placeAt(document.body);
+		}
+		domReady(dom_is_ready);
+	}
+	require(["dojo/domReady","dojo/_base/declare","dijit/_WidgetBase"], modules_loaded);
+</script>
+</body>
+</html>

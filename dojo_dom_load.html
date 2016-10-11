@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello Dojo</title>
+</head>
+<meta charset="utf-8">
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.11.2/dojo/dojo.js"></script>
+<script>
+	function dom_is_ready()
+	{
+		alert("Hello World, the DOM is ready!");
+	}
+	function modules_loaded(domReady)
+	{
+		domReady(dom_is_ready);
+	}
+	require(["dojo/domReady"], modules_loaded);
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title>Hello Dojo</title>
+</head>
+<body>
+	<script
+	data-dojo-config="async: true"
+	src="dojo/dojo/dojo.js">
+</script>
+<script>
+	function modules_loaded(domReady,domConstruct)
+	{
+		function dom_is_ready()
+		{
+			var h1 = domConstruct.create('h1',{
+				innerHTML:'hello world, the dom is ready!'
+			});
+			domConstruct.place(h1,document.body);
+		}
+		domReady(dom_is_ready);
+	}
+	require(["dojo/domReady","dojo/dom-construct"], modules_loaded);
+</script>
+</body>
+</html>

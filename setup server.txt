@@ -1,0 +1,7 @@
+1. install npm
+2. npm install http-server -g
+3. navigate to the folder
+4. http-server
+
+5. ngrok.exe
+6. ngrok http 8080
