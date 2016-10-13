@@ -1,0 +1,24 @@
+<html>
+<head><title>Hello AMD!</title></head>
+<body>
+<div
+data-dojo-type="dkudos/HelloWidget"
+data-dojo-props="message: 'I am from AMD!'">
+</div>
+<script data-dojo-config="async: 1, paths: {dkudos: '/dkudos'}"
+src="//ajax.googleapis.com/ajax/libs/dojo/1.9.0/dojo/dojo.js">
+</script>
+<script>
+function modules_loaded(domReady, parser)
+{
+domReady(function(){
+parser.parse();
+});
+}
+require(
+["dojo/domReady", "dojo/parser", "dkudos/HelloWidget"],
+modules_loaded
+);
+</script>
+</body>
+</html>
